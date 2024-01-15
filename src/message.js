@@ -5,17 +5,12 @@ const btn = new ButtonBuilder()
                 .setCustomId("TestButton")
                 .setLabel("This is a test button")
                 .setStyle(ButtonStyle.Primary);
-
 const row = new ActionRowBuilder()
                 .addComponents(btn);
 
 export const prepMessage = () => {
-
     bot.on("messageCreate", async (message) => {
-        console.log("message received")
-    
         if (!message?.author.bot){
-            console.log("message by non bot");
             console.log(`Content: ${message.content}`);
             console.log(btn);
 
